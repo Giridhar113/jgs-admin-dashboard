@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JGS Management Portal Login</title>
+  <link rel="stylesheet" href="css/dashboard-v13.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/auth-client.js" defer></script>
+  <script src="js/auth-enhancements.js" defer></script>
+</head>
+<body class="login-page">
+  <!-- Branding panel -->
+  <section class="login-brand" aria-label="JGS Management Portal">
+    <h1>JGS</h1>
+    <h2>Management Portal</h2>
+    <p>AY 2025-26 | JGS Group of Institutes | Andheri East, Mumbai</p>
+    <div class="brand-list">
+      <span>Student Registry</span>
+      <span>Fee Management</span>
+      <span>Analytics &amp; Reports</span>
+    </div>
+  </section>
+
+  <!-- Login card -->
+  <main class="login-panel">
+    <form class="login-card" data-login-form novalidate>
+      <h2>Admin Login</h2>
+      <p class="muted">For Principal, HOD, Registrar, and Accounts users only.</p>
+
+      <div class="field">
+        <label class="required" for="adminId">Admin ID</label>
+        <input id="adminId" name="adminId" autocomplete="username" required>
+        <div class="error" data-error-for="adminId"></div>
+      </div>
+
+      <div class="field">
+        <label class="required" for="password">Password</label>
+        <div class="password-row">
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button class="secondary" type="button" data-toggle-password aria-label="Show password">Show</button>
+        </div>
+        <div class="error" data-error-for="password"></div>
+      </div>
+
+      <div class="field">
+        <label class="required" for="adminRole">Login as</label>
+        <select id="adminRole" name="adminRole" required>
+          <option value="">Select role</option>
+          <option>Principal</option>
+          <option>HOD</option>
+          <option>Registrar</option>
+          <option>Accounts</option>
+        </select>
+        <div class="error" data-error-for="adminRole"></div>
+      </div>
+
+      <div class="login-actions">
+        <button type="submit">Login</button>
+        <a class="button secondary" href="mailto:it.support@jgs.edu">Contact IT Support</a>
+      </div>
+      <p class="error" data-login-status role="alert"></p>
+    </form>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      window.JGSAuthClient.initLoginPage();
+    });
+  </script>
+</body>
+</html>
+
